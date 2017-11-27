@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreGraphics
 
 class ViewController: UIViewController {
 
@@ -16,9 +15,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var playingCardView: PlayingCardView! {
         didSet {
             let swipe = UISwipeGestureRecognizer(target: self, action: #selector(nextCard))
-            swipe.direction = [.left,.right]
+            swipe.direction = [.left, .right]
             playingCardView.addGestureRecognizer(swipe)
+            let pinchSelector = #selector(playingCardView.adjustFaceCardScale(byHandlingGestureRecognizerBy:))
+            let pinch = UIPinchGestureRecognizer(target: playingCardView, action: pinchSelector)
+            playingCardView.addGestureRecognizer(pinch)
         }
+    }
+    @IBAction func flipCard(_ sender: UITapGestureRecognizer) {
+        switch sender.state {
+        case .ended: playingCardView.isFaceUp = !playingCardView.isFaceUp
+        default: break
+        }
+        
     }
     
     @objc func nextCard() {
