@@ -61,11 +61,11 @@
 			isa = PBXGroup;
 			children = (
 				B80796EA1FC3D270006A542B /* Supporting Files */,
-				B80796DA1FC3BA41006A542B /* ConcentrationViewController.swift */,
 				B80796DC1FC3BA41006A542B /* Main.storyboard */,
 				B80796E41FC3BA41006A542B /* Info.plist */,
 				B80796EB1FC495A3006A542B /* Concentration.swift */,
 				B80796ED1FC4997B006A542B /* Card.swift */,
+				B80796DA1FC3BA41006A542B /* ConcentrationViewController.swift */,
 				B8949ECF1FE47B5D00B4B804 /* ConcentrationThemeChooserViewController.swift */,
 			);
 			path = Concentration;
